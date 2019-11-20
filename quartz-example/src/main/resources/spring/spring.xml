@@ -51,6 +51,21 @@
                 <ref bean="cronTriggerFactoryBean"></ref>
             </list>
         </property>
-
     </bean>
+
+    <!--spring task 配置-->
+    <bean id="springTask" class="com.qz.example.job.SpringTaskServiceImpl" ></bean>
+    <task:scheduled-tasks>
+        <!--
+             可以配置多个定时任务
+             ref：指定 要执行的 方法在哪个bean中
+             method：指定 要执行的方法
+             initial-delay：设置web服务器启动后，要等多少毫秒开始执行定时任务
+             fixed-delay：设定每隔多少毫秒执行一次定时任务
+         -->
+        <task:scheduled ref="springTask" method="simpleTask" initial-delay="1000" fixed-delay="1000" />
+        <task:scheduled ref="springTask" method="cornTask" cron="*/5 * * * * ?"/>
+    </task:scheduled-tasks>
+
+
 </beans>
