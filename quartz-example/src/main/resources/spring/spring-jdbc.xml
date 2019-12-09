@@ -26,7 +26,7 @@
     </bean>-->
     <!--通用mapper-->
     <bean class="tk.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.qz.example.job.mapper" />
+        <property name="basePackage" value="com.qz.example.job.mapper"/>
         <property name="sqlSessionFactoryBeanName" value="sessionFactory"/>
         <property name="properties">
             <value>

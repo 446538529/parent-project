@@ -10,6 +10,6 @@
 <!--mybatis映射配置文件-->
 <mapper namespace="com.qz.example.job.mapper.TaskModelMapper">
     <select id="findStudentById" parameterType="int" resultType="student">
-             select * from student where id=#{id}
+        select * from student where id=#{id}
     </select>
 </mapper>

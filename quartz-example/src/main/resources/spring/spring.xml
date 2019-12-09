@@ -12,10 +12,10 @@
                     http://www.springframework.org/schema/task/spring-task.xsd
                     http://www.springframework.org/schema/context
                     http://www.springframework.org/schema/context/spring-context.xsd">
-    <mvc:annotation-driven />
+    <mvc:annotation-driven/>
     <!--注解支持方式-->
     <task:annotation-driven/>
-    <context:component-scan base-package="com.qz.example" />
+    <context:component-scan base-package="com.qz.example"/>
     <!--配置xml方式-->
     <bean id="cornJob" class="com.qz.example.job.CornJob"></bean>
     <!-- 配置JobDetail -->
@@ -54,7 +54,7 @@
     </bean>
 
     <!--spring task 配置-->
-    <bean id="springTask" class="com.qz.example.job.SpringTaskServiceImpl" ></bean>
+    <bean id="springTask" class="com.qz.example.job.SpringTaskServiceImpl"></bean>
     <task:scheduled-tasks>
         <!--
              可以配置多个定时任务
@@ -63,7 +63,7 @@
              initial-delay：设置web服务器启动后，要等多少毫秒开始执行定时任务
              fixed-delay：设定每隔多少毫秒执行一次定时任务
          -->
-        <task:scheduled ref="springTask" method="simpleTask" initial-delay="1000" fixed-delay="1000" />
+        <task:scheduled ref="springTask" method="simpleTask" initial-delay="1000" fixed-delay="1000"/>
         <task:scheduled ref="springTask" method="cornTask" cron="*/5 * * * * ?"/>
     </task:scheduled-tasks>
 

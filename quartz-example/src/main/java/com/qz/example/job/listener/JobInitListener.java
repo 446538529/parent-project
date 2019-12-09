@@ -9,7 +9,7 @@ import javax.servlet.ServletContextListener;
 public class JobInitListener implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent servletContextEvent) {
-        new Thread(()->{
+        new Thread(() -> {
             try {
                 JobInitUtil.getInstance().initJob();
             } catch (SchedulerException e) {
