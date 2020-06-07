@@ -13,4 +13,9 @@ public class TestController {
         return "ok:"+new Date();
     }
 
+    @GetMapping(value = "/get")
+    public String get(){
+        return "get:ok:"+new Date();
+    }
+
 }
